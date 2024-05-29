@@ -21,6 +21,9 @@ if( !class_exists('acf') ) {
   die('Please install and activate Advanced Custom Fields plugin.');
 }
 
+// Register enqueue scripts js/css.
+require_once plugin_dir_path(__FILE__) . './includes/enqueue/enqueue.php';
+
 // Register the custom tabs shortcode.
 require_once plugin_dir_path(__FILE__) . './shortcodes/shortcode.php';
 
