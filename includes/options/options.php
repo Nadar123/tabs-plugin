@@ -1,5 +1,4 @@
 <?php
-<?php
 
 // Hook the function into the 'admin_menu' action.
 add_action('admin_menu', 'my_plugin_menu');

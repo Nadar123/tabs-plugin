@@ -25,7 +25,8 @@ if( !class_exists('acf') ) {
 require_once plugin_dir_path(__FILE__) . './includes/enqueue/enqueue.php';
 
 // Register the custom tabs shortcode.
-require_once plugin_dir_path(__FILE__) . './shortcodes/shortcode.php';
+require_once plugin_dir_path(__FILE__) . './shortcodes/shortcodes.php';
 
 // Register option ACF page.
 require_once plugin_dir_path(__FILE__) . './includes/options/options.php';
+

@@ -11,33 +11,33 @@ class TabscodeClass {
         $tabs = get_field('tabs', 'option');
         if($tabs): 
         ?>
-            <ul class="accordion-container main-container">
+            <ul class="tabs-container main-container">
                 <?php 
                 // Loop through each item
                 foreach($tabs as $index => $tab): 
                     $activeClass = $index === 0 ? 'active' : '';
                 ?>
-                    <li class="item accordion-item <?php echo esc_attr($activeClass); ?>" data-tab-index="<?php echo esc_attr($index); ?>">
+                    <li class="item tab-item <?php echo esc_attr($activeClass); ?>" data-tab-index="<?php echo esc_attr($index); ?>">
                         <?php if(!empty($tab['title'])): ?>
-                            <div class="accordion-title title">
+                            <div class="tab-title title">
                                 <p> <?php echo esc_html($tab['title']); ?>  </p>
                                 <span class="chevron">&#62;</span>
                             </div>
                         <?php endif; ?>
-                        <div class="accordion-content tab-content">
+                        <div class="tab-content">
                             <?php if(!empty($tab['image'])): ?>
                                 <div class="image-wrapper">
                                     <img src="<?php echo esc_url($tab['image']['url']); ?>" alt="<?php echo esc_attr($tab['image']['alt']); ?>">
                                 </div>                           
                             <?php endif; ?>
                             <?php if(!empty($tab['text'])): ?>
-                                <div class="title text-wrapper">
+                                <div class="title">
                                     <h3><?php echo wp_kses_post($tab['text']); ?> <span>&rarr;</span></h3>
                                 </div>
                             <?php endif; ?>
                              <?php if(!empty($tab['body'])): ?>
                                 <div class="text-wrapper">
-                                    <p><?php echo wp_kses_post($tab['body']); ?> <span>&rarr;</span></p>
+                                    <p class="text"><?php echo wp_kses_post($tab['body']); ?> <span>&rarr;</span></p>
                                 </div>
                             <?php endif; ?>
                             
@@ -55,7 +55,8 @@ class TabscodeClass {
     <?php }
 }
 
-// Create an instance of the class
-$myShortcode = new TabscodeClass();
+// Instantiate the class
+$tabscode = new TabscodeClass();
+
 // Register the shortcode
-$myShortcode->register_shortcode();
+$tabscode->register_shortcode();

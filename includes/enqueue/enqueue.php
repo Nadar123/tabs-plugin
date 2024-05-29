@@ -1,5 +1,4 @@
 <?php
-<?php
 /**
  * Enqueue the custom tabs script.
  *
