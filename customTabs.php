@@ -20,3 +20,9 @@ if ( !function_exists( 'add_action' ) ) {
 if( !class_exists('acf') ) {
   die('Please install and activate Advanced Custom Fields plugin.');
 }
+
+// Register the custom tabs shortcode.
+require_once plugin_dir_path(__FILE__) . './shortcodes/shortcode.php';
+
+// Register option ACF page.
+require_once plugin_dir_path(__FILE__) . './includes/options/options.php';
