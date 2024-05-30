@@ -26,9 +26,8 @@ function my_plugin_menu() {
 /**
  * Render the options page for the plugin.
  *
- * This function checks if the current user has the 'manage_options' capability. If not, it displays an error message and dies.
- * If the user does have the 'manage_options' capability, it displays a placeholder message.
- *
+ * This function checks if the current user has the 'manage_options' capability. 
+ * If not, it displays an error message.
  * @return void
  */
 

@@ -1,31 +1,40 @@
 import '../css/style.scss';
 import 'normalize.css';
+document.addEventListener('DOMContentLoaded', (event) => {
+  // Get all tab items and tab content
+  const tabItems = document.querySelectorAll('.tab-item');
+  const tabContents = document.querySelectorAll('.tab-content');
 
-document.addEventListener('DOMContentLoaded', function () {
-  const accordionItems = document.querySelectorAll('.tab-item');
+  // hide all tab content
+  function hideAllTabContent() {
+    tabContents.forEach(tabContent => {
+      tabContent.classList.remove('active');
+    });
+  }
 
-  accordionItems.forEach(function (item) {
-    const title = item.querySelector('.tab-title');
+  // remove 'active' class from all tab items
+  function removeActiveClassFromAllTabItems() {
+    tabItems.forEach(tabItem => {
+      tabItem.classList.remove('active');
+    });
+  }
 
-    // const event = window.matchMedia('(max-width: 768px)').matches ? 'click' : 'mouseover';
+  // show tab content by index
+  function showTabContent(index) {
+    tabContents[index].classList.add('active');
+    tabItems[index].classList.add('active'); // Add 'active' class to the current tab item
+  }
 
-    title.addEventListener("click", function (e) {
-      e.preventDefault();
-      // If the item is already active, remove the 'active' class and return
-      if (item.classList.contains('active')) {
-        item.classList.remove('active');
-        return;
-      }
-
-      // Close all items except the one being hovered over
-      accordionItems.forEach(function (nonHoveredItem) {
-        if (nonHoveredItem !== item) {
-          nonHoveredItem.classList.remove('active');
-        }
-      });
-
-      // Add 'active' class to the item being hovered 
-      item.classList.add('active');
+  // Aclick event listener to each tab item
+  tabItems.forEach((tabItem, index) => {
+    tabItem.addEventListener('click', () => {
+      hideAllTabContent();
+      removeActiveClassFromAllTabItems();
+      showTabContent(index);
     });
   });
+
+  hideAllTabContent();
+  removeActiveClassFromAllTabItems();
+  showTabContent(0);
 });

@@ -2,7 +2,7 @@
 /**
  * Enqueue the custom tabs script.
  *
- * This function is hooked into the 'wp_enqueue_scripts' action, so it runs when WordPress is enqueuing scripts.
+ * This function is hooked into the 'wp_enqueue_scripts' action.
  * It enqueues a JavaScript file located in the 'dist' directory of the plugin.
  *
  * @return void
@@ -16,6 +16,8 @@ function custom_tabs_enqueue_scripts() {
         '1.0',
         true
     );
+    wp_enqueue_style( 'typekit-fonts', 'https://use.typekit.net/wuz0gtr.css', array(), null );
+
 
 }
 // Enqueue the custom tabs script js an css.
