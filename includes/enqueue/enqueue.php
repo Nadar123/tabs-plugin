@@ -16,7 +16,7 @@ function custom_tabs_enqueue_scripts() {
         '1.0',
         true
     );
-    wp_enqueue_style( 'typekit-fonts', 'https://use.typekit.net/wuz0gtr.css', array(), null );
+    wp_enqueue_style( 'typekit-fonts', 'https://p.typekit.net/p.css?s=1&k=wuz0gtr&ht=tk&f=139.175&a=87786064&app=typekit&e=css', array(), null );
 
 
 }
