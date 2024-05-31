@@ -119,6 +119,12 @@ body {
           @media screen and (max-width: $mobile) {
             width: 100%;
           }
+          span {
+            font-weight: 700;
+            @media screen and (max-width: $mobile) {
+              font-weight: 400;
+            }
+          }
         }
         .name-and-role {
           display: flex;

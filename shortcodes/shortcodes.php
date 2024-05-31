@@ -54,7 +54,7 @@ class TabscodeClass {
                                 <?php  endif; ?>
                                 <?php if($text): ?>
                                 <p class="text-under-image">
-                                    <strong><?php echo esc_html(substr($text, 0, 57)); ?></strong><?php echo esc_html(substr($text, 50)); ?>
+                                    <span><?php echo esc_html(substr($text, 0, 57)); ?></span><?php echo esc_html(substr($text, 50)); ?>
                                 </p>
     
                                 <?php  endif; ?>
