@@ -134,6 +134,20 @@ body {
           @media screen and (max-width: $mobile) {
             align-items: center;
           }
+          .image-box {
+            .desktop {
+              display: block;
+              @media screen and (max-width: $mobile) {
+                display: none;
+              }
+            }
+            .mobile {
+              display: none;
+              @media screen and (max-width: $mobile) {
+                display: block;
+              }
+            }
+          }
           .name-and-role__content {
             p {
               font-weight: bold;

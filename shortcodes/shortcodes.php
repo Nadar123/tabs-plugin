@@ -32,7 +32,8 @@ class TabscodeClass {
                         $image = $tab['image']; 
                         $quotation = $tab['quotation'];
                         $text = $tab['text']; 
-                        $user_img = $tab['user_img']; 
+                        $user_img = $tab['user_img'];
+                        $user_img_mobile = $tab['user_img_mobile'];  
                         $name = $tab['name']; 
                         $role = $tab['role']; 
                         $company_icon = $tab['company_icon']; 
@@ -60,9 +61,11 @@ class TabscodeClass {
                                 <?php  endif; ?>
     
                                 <div class="name-and-role">
-                                    <?php if($user_img): ?>
+                                    <?php if($user_img || $user_img_mobile): ?>
                                         <div class="image-box">
-                                            <img src="<?php echo esc_url($user_img['url']); ; ?>" alt="Description of small image"> 
+                                            <img class="desktop" src="<?php echo esc_url($user_img['url']); ; ?>" alt="Description of small image"> 
+                                            <img class="mobile" src="<?php echo esc_url($user_img_mobile['url']); ; ?>" alt="Description of small image"> 
+                            
                                         </div>
                                      <?php  endif; ?>
                                      <div class="name-and-role__content">
