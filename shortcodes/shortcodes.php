@@ -108,18 +108,21 @@ class TabscodeClass {
                             </div>
                         </div>
                     </div>
-                    <div class="bottom brand-wrapper">
-                        <?php if(!empty($brands_icon) && is_array($brands_icon)): ?>
-                            <h4 class="title">Trusted By</h4>
-                            <div class="bottom-wrapper">
-                                <?php foreach($brands_icon as $index => $image): ?>
-                                    <div class="brand-icon brand-icon<?php echo $index; ?>">
-                                        <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
-                                    </div>
-                                <?php endforeach; ?>
-                            </div>
-                        <?php endif; ?>
-                    </div>
+                        <div class="bottom brand-wrapper">
+                            <?php if(!empty($brands_icon) && is_array($brands_icon)): ?>
+                                <?php $brands_title = $tab['brands_title']; ?>
+                                <?php if($brands_title): ?>
+                                    <h4 class="title"><?php echo esc_html($brands_title); ?></h4>
+                                <?php endif; ?>
+                                <div class="bottom-wrapper">
+                                    <?php foreach($brands_icon as $index => $image): ?>
+                                        <div class="brand-icon brand-icon<?php echo $index; ?>">
+                                            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
+                            <?php endif; ?>
+                        </div>
                 </div>
                    
                 <?php  endforeach; ?>
