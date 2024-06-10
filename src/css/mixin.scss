@@ -1,13 +1,13 @@
 @mixin layout {
   width: 100%;
   margin: auto;
-  padding: 0;
+  padding: 6rem 0;
 }
 
 @mixin title {
   font-family: 'proxima-nova', sans-serif;
   font-size: 70px;
-  line-height: 65px;
+  line-height: 75px;
   font-weight: 700;
   color: $black;
 }
@@ -56,4 +56,14 @@
   display: flex;
   align-items: baseline;
   justify-content: space-between;
+}
+
+@mixin tabs-titles {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1128px;
+  width: 1124px;
+  margin: auto;
+  padding: 0px;
 }
